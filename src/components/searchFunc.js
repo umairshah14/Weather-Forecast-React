@@ -34,11 +34,11 @@ export const handleSearch = (city, setCity, setIsSearched, setForecastDiv) => {
                 const forecastContent = response.data.list.map(
                   (dayForecast, index) => {
                     const date = new Date(dayForecast.dt * 1000);
+                    const formattedDate = date.toLocaleDateString();
                     const tempIcon =
                       "http://openweathermap.org/img/wn/" +
                       dayForecast.weather[0].icon +
                       "@2x.png";
-                    const formattedDate = date.toLocaleDateString();
 
                     let dayLabel = index === 0 ? "Today" : formattedDate;
 
