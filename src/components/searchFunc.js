@@ -7,7 +7,7 @@ export const handleSearch = (city, setCity, setIsSearched, setForecastDiv) => {
     alert("No city entered, please try again");
   } else {
     const LonLatURL =
-      "http://api.openweathermap.org/geo/1.0/direct?q=" +
+      "https://api.openweathermap.org/geo/1.0/direct?q=" +
       city +
       "&limit=1&appid=11a6edf7f55109a8876a082e0f89437e";
 
@@ -20,7 +20,7 @@ export const handleSearch = (city, setCity, setIsSearched, setForecastDiv) => {
         } else {
           const lat = response.data[0].lat;
           const lon = response.data[0].lon;
-          const forecastURL = `http://api.openweathermap.org/data/2.5/forecast/daily?lat=${lat}&lon=${lon}&units=metric&cnt=6&appid=11a6edf7f55109a8876a082e0f89437e`;
+          const forecastURL = `https://api.openweathermap.org/data/2.5/forecast/daily?lat=${lat}&lon=${lon}&units=metric&cnt=6&appid=11a6edf7f55109a8876a082e0f89437e`;
 
           axios
             .get(forecastURL)
